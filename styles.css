@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter-Regular.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('fonts/Inter-Medium.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --light-color: #ffffff;
+    --dark-gray-color: #404b62;
+    --light-gray-color: #cccccc;
+    --red-color: #ed5761;
+    --black-color: #161515;
+    --pink-color: #f92185;
+}
+
+* {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 24px;
+    box-sizing: border-box;
+    color: var(--black-color);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    font-size: 18px;
+    height: 30px;
+    border: none;
+    color: var(--light-color);
+    background-color: var(--dark-gray-color);
+    font-weight: 500;
+    height: 45px;
+    padding: 10px 80px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+input {
+    font-size: 18px;
+    height: 30px;
+    background-color: var(--light-color);
+    color: var(--light-gray-color);
+    border-radius: 8px;
+    height: 45px;
+    padding:  0px 50px 0px 15px;
+    margin: 20px 0px;
+    outline: none;
+    border:1px solid var(--light-gray-color);
+}
+
+input[type='date'] {
+    background: #f2f2f2;
+    color: var(--light-gray-color);
+    font-family: 'Inter';
+    font-weight: 300;
+  }
+  
+
+.date-calculate {
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+}
+
+.result {
+    font-weight: 600;
+    font-size: 48px;
+}
