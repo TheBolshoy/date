@@ -24,24 +24,46 @@ function getDate(event) {
         let month = nowDateArr[1] - dateArr[1]
         let day = nowDateArr[2] - dateArr[2]
 
-        if (nowDateArr[2] < dateArr[2]) {
+        if (nowDateArr[2] < dateArr[2] && nowDateArr[1] < dateArr[1]) {
+            let dayDifference = nowDateArr[2] - dateArr[2]
+            let monthDifference = nowDateArr[1] - dateArr[1]
+
+            year = year - 1
+            day = 31 - dayDifference * (-1)
+            month = 12 - monthDifference * (-1) -1
+            const result = formatDuration({ years: year, months: month, days: day }, {locale: ru})
+            resultDiv.innerHTML = result
+
+            console.log(month)
+        } else if (nowDateArr[2] < dateArr[2] && nowDateArr[1] > dateArr[1]) {
             let dayDifference = nowDateArr[2] - dateArr[2]
             day = 31 - dayDifference * (-1)
             month = month - 1
-        } else {
-            day = nowDateArr[2] - dateArr[2]
-        }
 
-        if (nowDateArr[1] < dateArr[1]) {
+            const result = formatDuration({ years: year, months: month, days: day },{locale: ru})
+            resultDiv.innerHTML = result
+
+            console.log(2)
+
+        } else if (nowDateArr[1] < dateArr[1] && nowDateArr[2] > dateArr[2]) {
             let monthDifference = nowDateArr[1] - dateArr[1]
             month = 12 - monthDifference * (-1)
             year = year - 1
+
+            const result = formatDuration({ years: year, months: month, days: day }, {locale: ru})
+            resultDiv.innerHTML = result
+
+            console.log(3)
+
         } else {
+            day = nowDateArr[2] - dateArr[2]
             month = nowDateArr[1] - dateArr[1]
+
+            const result = formatDuration({ years: year, months: month, days: day })
+            resultDiv.innerHTML = result
         }
 
-        const result = formatDuration({ years: year, months: month, days: day })
-        resultDiv.innerHTML = result
+
     }
 
 }
